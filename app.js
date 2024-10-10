@@ -18,12 +18,15 @@ app.use('/api/auth', authRoutes);
 app.use(errorHandler);
 
 // Connect to MongoDB and Start Server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('MongoDB connected');
+        app.get('/', (req, res) => {
+            res.send('Hello from Heroku');
+          });
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     } catch (err) {
         console.error(`Error: ${err.message}`);
