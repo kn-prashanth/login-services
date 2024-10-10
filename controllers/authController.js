@@ -90,9 +90,9 @@ exports.enable2FA = async (req, res, next) => {
         const user = await User.findById(req.user.id);
         console.log("enable2FA::user::", user);
         
-        // if (user.is2FAEnabled) {
-        //     return res.status(400).json({ success: false, message: '2FA is already enabled' });
-        // }
+        if (user.is2FAEnabled) {
+            return res.status(400).json({ success: false, message: '2FA is already enabled' });
+        }
 
         const otpauth_url = user.generate2FASecret();
         await user.save();
@@ -109,7 +109,6 @@ exports.enable2FA = async (req, res, next) => {
                 message: 'Scan the QR code with your authenticator app',
             });
         });
-        await sendEmail({to:user.email, subject: "Scan the QR code with your authenticator app", text: otpauth_url});
     } catch (error) {
         next(error);
     }
