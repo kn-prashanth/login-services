@@ -1,4 +1,4 @@
-Here are all the endpoints for your **login service** API along with the request details and formats:
+Here are all the endpoints for **login service** API along with the request details and formats:
 
 ---
 
@@ -68,5 +68,3 @@ Here are all the endpoints for your **login service** API along with the request
 - **Authentication**: None (but the correct 2FA token must be provided)
 
 ---
-
-Let me know if any endpoints need further clarification or if there are additional endpoints you'd like included!
