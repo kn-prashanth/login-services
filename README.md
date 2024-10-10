@@ -32,7 +32,7 @@ Here are all the endpoints for **login service** API along with the request deta
 ---
 
 ### **Enable 2FA**
-- **URL**: `https://login-services2.vercel.app/api/auth/enable-2fa`
+- **URL**: `https://login-services2.vercel.app/api/auth/2fa/enable`
 - **Method**: `POST`
 - **Headers**: `Authorization: Bearer <JWT_TOKEN>` (Token received after login)
 - **Body**: None (user’s 2FA will be enabled and a QR code or secret will be sent)
@@ -41,7 +41,7 @@ Here are all the endpoints for **login service** API along with the request deta
 ---
 
 ### **Verify 2FA**
-- **URL**: `https://login-services2.vercel.app/api/auth/verify-2fa`
+- **URL**: `https://login-services2.vercel.app/api/auth/2fa/verify`
 - **Method**: `POST`
 - **Body**:
   ```json
@@ -54,7 +54,7 @@ Here are all the endpoints for **login service** API along with the request deta
 ---
 
 ### **Login with 2FA**
-- **URL**: `https://login-services2.vercel.app/api/auth/login-2fa`
+- **URL**: `https://login-services2.vercel.app/api/auth/login`
 - **Method**: `POST`
 - **Body**:
   ```json
