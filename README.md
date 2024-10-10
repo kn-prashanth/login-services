@@ -46,7 +46,6 @@ Here are all the endpoints for **login service** API along with the request deta
 - **Body**:
   ```json
   {
-    "userId": "<USER_ID>",
     "token": "<2FA_TOKEN>"
   }
   ```
