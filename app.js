@@ -24,9 +24,6 @@ const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('MongoDB connected');
-        app.get('/', (req, res) => {
-            res.send('Hello from Heroku');
-          });
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     } catch (err) {
         console.error(`Error: ${err.message}`);
@@ -55,3 +52,5 @@ process.on('SIGINT', async () => {
     console.log('Mongoose connection disconnected through app termination');
     process.exit(0);
 });
+
+module.exports = app;
